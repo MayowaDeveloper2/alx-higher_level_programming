@@ -128,3 +128,26 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
                                                 self.__x, self.__y,
                                                 self.__width, self.__height)
+
+    def update(self, *args):
+        """
+            assigns key/value argument to attributes
+            kwargs is skipped if args is not empty
+            Args:
+                *args - variable number of no keyword args
+                **kwargs - variable number of keyword args
+        """
+
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setter__(key, val)
+            return
+
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
