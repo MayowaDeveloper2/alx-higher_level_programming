@@ -129,7 +129,7 @@ class Rectangle(Base):
                                                 self.__x, self.__y,
                                                 self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
             assigns key/value argument to attributes
             kwargs is skipped if args is not empty
@@ -140,7 +140,7 @@ class Rectangle(Base):
 
         if len(args) == 0:
             for key, val in kwargs.items():
-                self.__setter__(key, val)
+                self.__setattr__(key, val)
             return
 
         try:
