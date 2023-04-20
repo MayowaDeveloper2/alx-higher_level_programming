@@ -1,10 +1,18 @@
 #!/usr/bin/python3
+"""
+    class Square imports class Rectangle
+"""
 from models.rectangle import Rectangle
-"""This module is for square"""
 
 
 class Square(Rectangle):
+    """
+        Square implements rectangle
+    """
     def __init__(self, size, x=0, y=0, id=None):
+        """
+            initialises Square (overrides Rectangle init)
+        """
         super().__init__(size, size, x, y, id)
 
     @property
@@ -12,7 +20,6 @@ class Square(Rectangle):
         """
             returns the size of the square
         """
-
         return self.width
 
     @size.setter
@@ -20,7 +27,6 @@ class Square(Rectangle):
         """
             sets the value of size
         """
-
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
