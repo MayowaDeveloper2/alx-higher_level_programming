@@ -3,6 +3,7 @@
 import json
 import csv
 
+
 class Base:
     """Represent the base model"""
     __nb_objects = 0
@@ -81,4 +82,3 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
-
