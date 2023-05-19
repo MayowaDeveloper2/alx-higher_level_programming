@@ -1,10 +1,7 @@
--- displays the average temp of 3 cities
--- during July and August
--- ordered by temperature desc
+-- display max tempretature of each state
+-- order by statename
 
-SELECT city, AVG(value) as avg_temp
+SELECT state, MAX(value) AS max_temp
 FROM temperatures
-WHERE month = 7 OR month = 8mm
-GROUP BY city;
-ORDER BY avg_temp DESC
-LIMIT 3;
+GROUP BY state
+ORDER BY state;
